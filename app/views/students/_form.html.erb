@@ -18,8 +18,8 @@
     </div>
   <% end %>
    <div class="field">
-   <%= f.label :Select_Gtoup %></br>
-   <%= select_tag(:city_id, options_for_select([['A',1],['B',2],['C',3],['D',4]])) %>
+   <%= f.label :Select_Group %></br>
+   <%= f.select(:group, options_for_select([['A','A'],['B','B'],['C','C'],['D','D']])) %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
@@ -30,10 +30,10 @@
     <%= f.text_field :parent_name, :required => true %>
   </div>
   <div class="field">
-    <%= radio_button_tag(:gender, "Male") %>
-    <%= label_tag(:male, "Male") %>
-    <%= radio_button_tag(:gender, "Female") %>
-    <%= label_tag(:female, "Female") %>  
+    <%= f.radio_button(:sex, "Male") %>
+    <%= f.label(:male, "Male", :value => "male") %>
+    <%= f.radio_button(:sex, "Female") %>
+    <%= f.label(:male, "Female", :value => "female") %>  
   </div>
   <div class="field">
     <%= f.label :dob %><br>
@@ -93,7 +93,7 @@
   </div>
   <div class="field">
   <label>Please, tick mark the correct option of your knowledge about this A.I.T.S-Examination</label>
-   <%= select_tag(:city_id, options_for_select([['From School through Poster/Prospectus',1],['Teacher',2],['Friend/Relative',3],['Advertisement'],4])) %>
+   <%= f.select(:aits_knowledge, options_for_select([['From School through Poster/Prospectus',"From School through Poster/Prospectus"],['Teacher','Teacher'],['Friend/Relative','Friend/Relative'],['Advertisement','Advertisement']])) %>
   </div>
   <div class="field">
     <%= f.label :optional_centre_1 %><br>
