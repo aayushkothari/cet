@@ -1,3 +1,10 @@
+
+<style>
+  .alert,.notice{
+    display:none;
+  }
+</style>
+<div class="form-container">
 <%= form_for(@student) do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
@@ -10,34 +17,39 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+   <div class="field">
+   <%= f.label :Select_Gtoup %></br>
+   <%= select_tag(:city_id, options_for_select([['A',1],['B',2],['C',3],['D',4]])) %>
   </div>
   <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.text_field :sex %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :required => true %>
   </div>
   <div class="field">
     <%= f.label :parent_name %><br>
-    <%= f.text_field :parent_name %>
+    <%= f.text_field :parent_name, :required => true %>
+  </div>
+  <div class="field">
+    <%= radio_button_tag(:gender, "Male") %>
+    <%= label_tag(:male, "Male") %>
+    <%= radio_button_tag(:gender, "Female") %>
+    <%= label_tag(:female, "Female") %>  
   </div>
   <div class="field">
     <%= f.label :dob %><br>
-    <%= f.date_select :dob %>
+    <%= f.date_select :dob, :required => true %>
   </div>
   <div class="field">
     <%= f.label :street_address %><br>
-    <%= f.text_field :street_address %>
+    <%= f.text_field :street_address, :required => true %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, :required => true %>
   </div>
   <div class="field">
     <%= f.label :pincode %><br>
-    <%= f.text_field :pincode %>
+    <%= f.text_field :pincode, :required => true %>
   </div>
   <div class="field">
     <%= f.label :ph_landline %><br>
@@ -49,39 +61,39 @@
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :required => true %>
   </div>
   <div class="field">
     <%= f.label :class %><br>
-    <%= f.text_field :current_class %>
+    <%= f.text_field :current_class, :required => true %>
   </div>
   <div class="field">
     <%= f.label :school_name %><br>
-    <%= f.text_field :school_name %>
+    <%= f.text_field :school_name, :required => true %>
   </div>
   <div class="field">
     <%= f.label :school_street_address %><br>
-    <%= f.text_field :school_street_address %>
+    <%= f.text_field :school_street_address, :required => true %>
   </div>
   <div class="field">
     <%= f.label :school_state %><br>
-    <%= f.text_field :school_state %>
+    <%= f.text_field :school_state, :required => true %>
   </div>
   <div class="field">
     <%= f.label :school_pincode %><br>
-    <%= f.text_field :school_pincode %>
+    <%= f.text_field :school_pincode, :required => true %>
   </div>
   <div class="field">
     <%= f.label :school_phone %><br>
-    <%= f.text_field :school_phone %>
+    <%= f.text_field :school_phone, :required => true %>
   </div>
   <div class="field">
     <%= f.label :school_principal %><br>
-    <%= f.text_field :school_principal %>
+    <%= f.text_field :school_principal, :required => true %>
   </div>
   <div class="field">
-    <%= f.label :aits %><br>
-    <%= f.text_field :aits_knowledge %>
+  <label>Please, tick mark the correct option of your knowledge about this A.I.T.S-Examination</label>
+   <%= select_tag(:city_id, options_for_select([['From School through Poster/Prospectus',1],['Teacher',2],['Friend/Relative',3],['Advertisement'],4])) %>
   </div>
   <div class="field">
     <%= f.label :optional_centre_1 %><br>
@@ -101,25 +113,26 @@
   </div>
   <div class="field">
     <%= f.label :fee_amount %><br>
-    <%= f.text_field :fee_amount %>
+    <%= f.text_field :fee_amount, :required => true %>
   </div>
   <div class="field">
     <%= f.label :draft_no %><br>
-    <%= f.text_field :draft_no %>
-  </div>
-  <div class="field">
-    <%= f.label :draft_date %><br>
-    <%= f.date_select :draft_date %>
+    <%= f.text_field :draft_no, :required => true %>
   </div>
   <div class="field">
     <%= f.label :bank %><br>
-    <%= f.text_field :bank %>
+    <%= f.text_field :bank, :required => true %>
   </div>
   <div class="field">
     <%= f.label :branch %><br>
-    <%= f.text_field :branch %>
+    <%= f.text_field :branch, :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :draft_date %><br>
+    <%= f.date_select :draft_date, :required => true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit"%>
   </div>
 <% end %>
+</div>
